@@ -624,7 +624,7 @@ const translations = {
     'studio.p3': 'Du är varmt välkommen att svänga förbi!',
     'tag-production': 'Produktion',
     'tag-mixing': 'Mixning',
-    'tag-mastering': 'Mastring',
+    'tag-mastering': 'Mastering',
     'tag-songwriting': 'Låtskrivning',
     'tag-co-production': 'Co-produktion',
     'tag-saxophone': 'Saxofon',
