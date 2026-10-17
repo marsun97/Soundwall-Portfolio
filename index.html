@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markus Sundvall — Music Producer</title>
+    <meta
+      name="description"
+      content="Markus Sundvall is a music producer based in Stockholm offering production, mixing, mastering, songwriting and recording. Listen to selected work and get in touch."
+    />
+    <meta name="author" content="Markus Sundvall" />
+    <meta name="theme-color" content="#184e77" />
+
+    <!-- ── Canonical & social sharing ──
+         NOTE: replace https://www.markussundvall.com/ with your real domain
+         (e.g. https://soundwall.se/) before going live. -->
+    <link rel="canonical" href="https://www.markussundvall.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Markus Sundvall" />
+    <meta property="og:title" content="Markus Sundvall — Music Producer" />
+    <meta
+      property="og:description"
+      content="Music production, mixing, mastering and songwriting from Stockholm. Listen to selected work and get in touch."
+    />
+    <meta property="og:url" content="https://www.markussundvall.com/" />
+    <meta property="og:image" content="https://www.markussundvall.com/Portrait.jpg" />
+    <meta property="og:image:alt" content="Portrait of Markus Sundvall" />
+    <meta property="og:locale" content="sv" />
+    <meta property="og:locale:alternate" content="en" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Markus Sundvall — Music Producer" />
+    <meta
+      name="twitter:description"
+      content="Music production, mixing, mastering and songwriting from Stockholm."
+    />
+    <meta name="twitter:image" content="https://www.markussundvall.com/Portrait.jpg" />
+
+    <!-- ── Icons ── -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+    <!-- ── Fonts ── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Miranda+Sans:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ── Runtime CDN prefetch ── -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Markus Sundvall",
+        "jobTitle": "Music Producer",
+        "url": "https://www.markussundvall.com/",
+        "image": "https://www.markussundvall.com/Portrait.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Stockholm",
+          "addressCountry": "SE"
+        },
+        "knowsAbout": [
+          "Music Production",
+          "Mixing",
+          "Mastering",
+          "Songwriting",
+          "Recording"
+        ],
+        "sameAs": [
+          "https://www.instagram.com/marsunmusic/",
+          "https://se.linkedin.com/in/markus-sundvall-012178213",
+          "https://open.spotify.com/artist/50doRggGP66qyXsN9vZJ0C",
+          "https://soundcloud.com/markus-sundvall",
+          "https://www.tiktok.com/@marsun_music"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <!-- ── NAVBAR (sticky, outside page-wrap so overflow-x doesn't break it) ── -->
+    <nav>
+      <div class="nav-inner">
+        <div class="logo-wrapper">
+          <div class="logo-glow"></div>
+          <img class="logo" src="Logo-3.png" alt="Markus Sundvall" width="476" height="91" />
+        </div>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#hero" class="nav-icon-link" id="home-link" aria-label="Home"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg><span data-i18n="nav.home">Home</span></a></li>
+          <li><a href="#about" class="nav-icon-link" id="about-link" aria-label="About"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12v3c0 1.657 1.343 3 3 3h1c1.105 0 2-.895 2-2v-4c0-1.105-.895-2-2-2H5.1A8.003 8.003 0 0119.9 10H18c-1.105 0-2 .895-2 2v4c0 1.105.895 2 2 2h1c1.657 0 3-1.343 3-3v-3c0-5.523-4.477-10-10-10z"/></svg><span data-i18n="nav.about">About</span></a></li>
+          <li><a href="#projects" class="nav-icon-link" id="projects-link" aria-label="Projects"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg><span data-i18n="nav.projects">Projects</span></a></li>
+          <li><a href="#cta" class="nav-icon-link" id="contact-link" aria-label="Contact"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm-1-9c0-.55.45-1 1-1s1 .45 1 1v6c0 .55-.45 1-1 1s-1-.45-1-1V5zm6 6c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg><span data-i18n="nav.contact">Contact</span></a></li>
+          <li>
+            <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language">
+              <span class="lang-flag active" data-lang="en">
+                <svg viewBox="0 0 60 30" fill="currentColor"><rect width="60" height="30" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="3"/><path d="M0 0l60 30m0-30L0 30" stroke="#C8102E" stroke-width="1.5"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="5"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="2"/></svg>
+                <span class="lang-label">EN</span>
+              </span>
+              <span class="lang-flag" data-lang="sv">
+                <svg viewBox="0 0 16 10" fill="currentColor"><rect width="16" height="10" fill="#005BAA"/><rect x="4" y="0" width="2" height="10" fill="#FCDD09"/><rect x="0" y="3.5" width="16" height="3" fill="#FCDD09"/></svg>
+                <span class="lang-label">SV</span>
+              </span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-icon-link theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+              <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+              <svg class="icon-sun" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8c-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3-1.35 3-3 3zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0a.996.996 0 000-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 000-1.41.996.996 0 00-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 000-1.41.996.996 0 00-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
+              <span data-i18n="nav.theme">Theme</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ── PAGE WRAP (overflow-x: hidden for this content only) ── -->
+    <div class="page-wrap">
+      <!-- ── HERO ── -->
+      <div id="hero-section">
+        <div id="hero">
+          <div class="hero-text">
+            <div class="h1-row">
+              <h1 data-i18n="hero.name">Markus Sundvall</h1>
+              <div class="equalizer" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+            <h2 data-i18n="hero.tagline">Music Producer</h2>
+            <p><span id="typed-text"></span><span class="typed-cursor">|</span></p>
+            <div class="btn-group">
+              <a class="pro-btn" href="#cta" id="hero-contact-btn" data-i18n="hero.btn">Contact Me</a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="img-frame">
+              <img
+                src="Portrait.jpg"
+                alt="Markus Sundvall"
+                width="1080"
+                height="1080"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── ABOUT ── -->
+      <section id="about" class="reveal">
+        <div class="section-inner">
+          <div class="about-grid">
+            <div class="about-image-wrapper">
+              <div class="about-avatar">
+                <img
+                  src="portrait-2.jpg"
+                  alt="Markus Sundvall"
+                  width="539"
+                  height="649"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+            <div class="about-text">
+              <h2 data-i18n="about.title">About Me</h2>
+              <div class="accent-line"></div>
+              <p data-i18n="about.p1">
+                My name is Markus Sundvall and im a music producer based in Stockholm. 
+                I found my passion for music production in my teens, where
+                Avicii and Martin Garrix became my biggest role models. Since
+                then, I have spent many hours in various studios, completed a
+                Bachelor of Arts degree in music production, and traveled to
+                London and Barcelona to work with artists and songwriters.
+              </p>
+              <p data-i18n="about.p2">
+                When
+                it comes to recording instruments, I am independent, playing
+                saxophone, guitar, and piano. Therefore, I have a great
+                opportunity to help you achieve your vision, from the first demo
+                to a finished song ready for release. I look forward to hearing
+                more about your project!
+              </p>
+              <div class="skill-tags">
+                <span data-i18n="tag-production">Production</span>
+                <span data-i18n="tag-mixing">Mixing</span>
+                <span data-i18n="tag-mastering">Mastering</span>
+                <span data-i18n="tag-songwriting">Songwriting</span>
+                <span data-i18n="tag-recording">Recording</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── STUDIO (placeholder — swap the image, text and map with real content) ── -->
+          <div class="studio-section">
+            <div class="studio-image">
+              <img
+                src="StudioPlaceHolder.jpg"
+                alt="Inside the studio"
+                width="617"
+                height="324"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            <div class="studio-details">
+              <div class="studio-text">
+                <h3 data-i18n="studio.title">The Studio</h3>
+                <p data-i18n="studio.p1">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <p data-i18n="studio.p2">
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+                <p data-i18n="studio.p3">
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur.
+                </p>
+              </div>
+
+              <!-- Studio map -->
+              <div class="studio-map">
+                <iframe
+                  class="studio-map-frame"
+                  title="Studio location"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  src="https://www.google.com/maps?q=Skeppargatan%2039%2C%20114%2052%20Stockholm&output=embed"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── PROJECTS 3D CAROUSEL ── -->
+      <section id="projects" class="reveal">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 data-i18n="projects.title">My Work</h2>
+            <p class="section-subtitle" data-i18n="projects.sub">Spin through my work</p>
+          </div>
+          <div class="carousel-3d-container">
+            <div class="carousel-3d-stage" id="carousel-stage">
+              <div
+                class="carousel-card"
+                data-index="0"
+                data-preview-url="https://p.scdn.co/mp3-preview/3519b2d5bb64ee3b92a871618de6c4109f89944b"
+                data-spotify-url="https://open.spotify.com/track/1UcfdqZHjVEAQGiNvON5AX"
+              >
+                <div class="card-image"></div>
+                <div class="card-body">
+                  <div class="card-tags">
+                    <span class="card-tag" data-i18n="tag-songwriting">Songwriting</span>
+                    <span class="card-tag" data-i18n="tag-production">Production</span>
+                    <span class="card-tag" data-i18n="tag-mixing">Mixing</span>
+                  </div>
+                  <h3>Out of Control</h3>
+                  <p data-i18n="card.desc0">
+                    An Avicii-inspired pop song I wrote together with the artist Thornberg in a session.
+                  </p>
+                </div>
+                <div class="card-player">
+                  <div class="card-player-bg"></div>
+                  <div class="card-player-content">
+                    <button class="card-player-btn" type="button" aria-label="Play">
+                      &#9654;
+                    </button>
+                    <div class="card-player-meta">
+                      <span class="card-player-title">Out of Control</span>
+                      <span class="card-player-artist">Thornberg</span>
+                    </div>
+                  </div>
+                  <a
+                    class="card-spotify-link"
+                    href="https://open.spotify.com/track/1UcfdqZHjVEAQGiNvON5AX"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Listen on Spotify"
+                  >
+                    <svg viewBox="0 0 24 24" fill="#1DB954">
+                      <path
+                        d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.68 18.72 12.84c.361.18.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"
+                      />
+                    </svg>
+                  </a>
+                  <div class="card-player-progress">
+                    <div class="card-player-bar"></div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="carousel-card"
+                data-index="1"
+                data-preview-url="https://p.scdn.co/mp3-preview/b6547cc9f3737121e45eb136159eec610307a05c"
+                data-spotify-url="https://open.spotify.com/track/6pUG6cHP9V6lJR1PQHlyQz"
+              >
+                <div class="card-image"></div>
+                <div class="card-body">
+                  <div class="card-tags">
+                    <span class="card-tag" data-i18n="tag-production">Production</span>
+                    <span class="card-tag" data-i18n="tag-mixing">Mixing</span>
+                  </div>
+                  <h3>Första åren av mitt liv</h3>
+                  <p data-i18n="card.desc1">
+                    I was honored by the sibling duo Anna and Marcus Claesson to produce this beautiful and well-written song for their artist project.
+                  </p>
+                </div>
+                <div class="card-player">
+                  <div class="card-player-bg"></div>
+                  <div class="card-player-content">
+                    <button class="card-player-btn" type="button" aria-label="Play">
+                      &#9654;
+                    </button>
+                    <div class="card-player-meta">
+                      <span class="card-player-title">Första åren av mitt liv</span>
+                      <span class="card-player-artist">Mackan n Matthew</span>
+                    </div>
+                  </div>
+                  <a
+                    class="card-spotify-link"
+                    href="https://open.spotify.com/track/6pUG6cHP9V6lJR1PQHlyQz"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Listen on Spotify"
+                  >
+                    <svg viewBox="0 0 24 24" fill="#1DB954">
+                      <path
+                        d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.68 18.72 12.84c.361.18.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"
+                      />
+                    </svg>
+                  </a>
+                  <div class="card-player-progress">
+                    <div class="card-player-bar"></div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="carousel-card"
+                data-index="2"
+                data-preview-url="https://p.scdn.co/mp3-preview/0a84d1affa36da35caeec515c9e4081905175bb1"
+                data-spotify-url="https://open.spotify.com/track/4k5Pkk6gwcUtIY6vrPUGQM"
+                data-cover-url="https://img.youtube.com/vi/sOiyaQUFoh8/maxresdefault.jpg"
+              >
+                <div class="card-image"></div>
+                <div class="card-body">
+                  <div class="card-tags">
+                    <span class="card-tag" data-i18n="tag-co-production">Co-production</span>
+                    <span class="card-tag" data-i18n="tag-mixing">Mixing</span>
+                    <span class="card-tag" data-i18n="tag-mastering">Mastering</span>
+                  </div>
+                  <h3>Romantic Comedies</h3>
+                  <p data-i18n="card.desc2">
+                    A Robyn-inspired song I produced in London together with the artist Josefine and another producer.
+                  </p>
+                </div>
+                <div class="card-player">
+                  <div class="card-player-bg"></div>
+                  <div class="card-player-content">
+                    <button class="card-player-btn" type="button" aria-label="Play">
+                      &#9654;
+                    </button>
+                    <div class="card-player-meta">
+                      <span class="card-player-title">Romantic Comedies</span>
+                      <span class="card-player-artist">Josefine Ridell</span>
+                    </div>
+                  </div>
+                  <a
+                    class="card-spotify-link"
+                    href="https://open.spotify.com/track/4k5Pkk6gwcUtIY6vrPUGQM"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Listen on Spotify"
+                  >
+                    <svg viewBox="0 0 24 24" fill="#1DB954">
+                      <path
+                        d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.68 18.72 12.84c.361.18.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"
+                      />
+                    </svg>
+                  </a>
+                  <div class="card-player-progress">
+                    <div class="card-player-bar"></div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="carousel-card"
+                data-index="3"
+                data-preview-url="https://p.scdn.co/mp3-preview/9b384f021881b02175b4bb7e400b6ba99aa40d71"
+                data-spotify-url="https://open.spotify.com/track/4okZIDv38a1rm3HzZTu2Z5"
+              >
+                <div class="card-image"></div>
+                <div class="card-body">
+                  <div class="card-tags">
+                    <span class="card-tag" data-i18n="tag-songwriting">Songwriting</span>
+                    <span class="card-tag" data-i18n="tag-production">Production</span>
+                    <span class="card-tag" data-i18n="tag-mixing">Mixing</span>
+                    <span class="card-tag" data-i18n="tag-mastering">Mastering</span>
+                  </div>
+                  <h3>Kvällarna vi minns</h3>
+                  <p data-i18n="card.desc3">
+                    With this song, I and the artist Måns won P4 Nästa Stjärna Göteborg 2025.
+                  </p>
+                </div>
+                <div class="card-player">
+                  <div class="card-player-bg"></div>
+                  <div class="card-player-content">
+                    <button class="card-player-btn" type="button" aria-label="Play">
+                      &#9654;
+                    </button>
+                    <div class="card-player-meta">
+                      <span class="card-player-title">Kvällarna vi minns</span>
+                      <span class="card-player-artist">Måns Holmgren</span>
+                    </div>
+                  </div>
+                  <a
+                    class="card-spotify-link"
+                    href="https://open.spotify.com/track/4okZIDv38a1rm3HzZTu2Z5"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Listen on Spotify"
+                  >
+                    <svg viewBox="0 0 24 24" fill="#1DB954">
+                      <path
+                        d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.68 18.72 12.84c.361.18.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"
+                      />
+                    </svg>
+                  </a>
+                  <div class="card-player-progress">
+                    <div class="card-player-bar"></div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="carousel-card"
+                data-index="4"
+                data-preview-url="https://p.scdn.co/mp3-preview/b2c47f5fdffdf224909bf9cb7f8409df705c73c2"
+                data-spotify-url="https://open.spotify.com/track/2FncERXrhE8kbSWiN1rKxM"
+              >
+                <div class="card-image"></div>
+                <div class="card-body">
+                  <div class="card-tags">
+                    <span class="card-tag" data-i18n="tag-songwriting">Songwriting</span>
+                    <span class="card-tag" data-i18n="tag-production">Production</span>
+                    <span class="card-tag" data-i18n="tag-saxophone">Saxophone</span>
+                    <span class="card-tag" data-i18n="tag-mixing">Mixing</span>
+                    <span class="card-tag" data-i18n="tag-mastering">Mastering</span>
+                  </div>
+                  <h3>Autumn Drive</h3>
+                  <p data-i18n="card.desc4">
+                    An 80s-inspired song in the Synthwave genre, from my own artist project Sidelake 85.
+                  </p>
+                </div>
+                <div class="card-player">
+                  <div class="card-player-bg"></div>
+                  <div class="card-player-content">
+                    <button class="card-player-btn" type="button" aria-label="Play">
+                      &#9654;
+                    </button>
+                    <div class="card-player-meta">
+                      <span class="card-player-title">Autumn Drive</span>
+                      <span class="card-player-artist">Sidelake 85</span>
+                    </div>
+                  </div>
+                  <a
+                    class="card-spotify-link"
+                    href="https://open.spotify.com/track/2FncERXrhE8kbSWiN1rKxM"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Listen on Spotify"
+                  >
+                    <svg viewBox="0 0 24 24" fill="#1DB954">
+                      <path
+                        d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.68 18.72 12.84c.361.18.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"
+                      />
+                    </svg>
+                  </a>
+                  <div class="card-player-progress">
+                    <div class="card-player-bar"></div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="carousel-card"
+                data-index="5"
+                data-preview-url="https://p.scdn.co/mp3-preview/0eada007902d672f5c9b93ca77c674e2491dc75b"
+                data-spotify-url="https://open.spotify.com/track/077kcUJqRVRainnwmU2dTI"
+              >
+                <div class="card-image"></div>
+                <div class="card-body">
+                  <div class="card-tags">
+                    <span class="card-tag" data-i18n="tag-co-production">Co-production</span>
+                    <span class="card-tag" data-i18n="tag-mixing">Mixing</span>
+                    <span class="card-tag" data-i18n="tag-mastering">Mastering</span>
+                  </div>
+                  <h3>Nobody But You</h3>
+                  <p data-i18n="card.desc5">
+                    A Scandipop song I produced in London together with the artist Josefine and another producer.
+                  </p>
+                </div>
+                <div class="card-player">
+                  <div class="card-player-bg"></div>
+                  <div class="card-player-content">
+                    <button class="card-player-btn" type="button" aria-label="Play">
+                      &#9654;
+                    </button>
+                    <div class="card-player-meta">
+                      <span class="card-player-title">Nobody But You</span>
+                      <span class="card-player-artist">Josefine Ridell</span>
+                    </div>
+                  </div>
+                  <a
+                    class="card-spotify-link"
+                    href="https://open.spotify.com/track/077kcUJqRVRainnwmU2dTI"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Listen on Spotify"
+                  >
+                    <svg viewBox="0 0 24 24" fill="#1DB954">
+                      <path
+                        d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.68 18.72 12.84c.361.18.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"
+                      />
+                    </svg>
+                  </a>
+                  <div class="card-player-progress">
+                    <div class="card-player-bar"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-btn carousel-prev"
+              id="carousel-prev"
+              type="button"
+              aria-label="Previous"
+            >
+              &#8249;
+            </button>
+            <button
+              class="carousel-btn carousel-next"
+              id="carousel-next"
+              type="button"
+              aria-label="Next"
+            >
+              &#8250;
+            </button>
+          </div>
+          <div class="carousel-dots" id="carousel-dots"></div>
+          <div class="projects-more">
+            <p class="projects-more-text" data-i18n="projects.moreText">Wanna hear more? Check out the rest of my projects.</p>
+            <button class="cta-btn" id="playlist-btn" type="button">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.68 18.72 12.84c.361.18.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+              </svg>
+              <span data-i18n="projects.moreBtn">Explore more</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── CTA ── -->
+      <section id="cta" class="reveal">
+        <div class="section-inner">
+          <h2 data-i18n="cta.title">Let's Create Something Together</h2>
+          <p data-i18n="cta.desc">Got a track, an idea, or a vision? I'd love to hear about it.</p>
+          <button class="cta-btn" id="cta-contact-btn" type="button" data-i18n="cta.btn">Get in Touch</button>
+        </div>
+      </section>
+
+      <!-- ── FOOTER ── -->
+      <footer>
+        <div class="footer-inner">
+          <div class="footer-social">
+            <a href="https://www.instagram.com/marsunmusic/" target="_blank" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://se.linkedin.com/in/markus-sundvall-012178213" target="_blank" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://open.spotify.com/artist/50doRggGP66qyXsN9vZJ0C" target="_blank" class="social-link" aria-label="Spotify">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.68 18.72 12.84c.361.18.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            </a>
+            <a href="https://soundcloud.com/markus-sundvall" target="_blank" class="social-link" aria-label="SoundCloud">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.999 14.165c-.052 1.796-1.612 3.169-3.4 3.169h-8.18a.68.68 0 0 1-.675-.683V7.862a.747.747 0 0 1 .452-.724s.75-.513 2.333-.513a5.364 5.364 0 0 1 2.763.755 5.433 5.433 0 0 1 2.57 3.54c.282-.08.574-.121.868-.12.884 0 1.73.358 2.347.992s.948 1.49.922 2.373ZM10.721 8.421c.247 2.98.427 5.697 0 8.672a.264.264 0 0 1-.53 0c-.395-2.946-.22-5.718 0-8.672a.264.264 0 0 1 .53 0ZM9.072 9.448c.285 2.659.37 4.986-.006 7.655a.277.277 0 0 1-.55 0c-.331-2.63-.256-5.02 0-7.655a.277.277 0 0 1 .556 0Zm-1.663-.257c.27 2.726.39 5.171 0 7.904a.266.266 0 0 1-.532 0c-.38-2.69-.257-5.21 0-7.904a.266.266 0 0 1 .532 0Zm-1.647.77a26.108 26.108 0 0 1-.008 7.147.272.272 0 0 1-.542 0 27.955 27.955 0 0 1 0-7.147.275.275 0 0 1 .55 0Zm-1.67 1.769c.421 1.865.228 3.5-.029 5.388a.257.257 0 0 1-.514 0c-.21-1.858-.398-3.549 0-5.389a.272.272 0 0 1 .543 0Zm-1.655-.273c.388 1.897.26 3.508-.01 5.412-.026.28-.514.283-.54 0-.244-1.878-.347-3.54-.01-5.412a.283.283 0 0 1 .56 0Zm-1.668.911c.4 1.268.257 2.292-.026 3.572a.257.257 0 0 1-.514 0c-.241-1.262-.354-2.312-.023-3.572a.283.283 0 0 1 .563 0Z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@marsun_music" target="_blank" class="social-link" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+            </a>
+          </div>
+          <p class="footer-copy" data-i18n="footer.copy">&copy; 2026 Markus Sundvall. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+    <!-- /page-wrap -->
+
+    <!-- ── CONTACT MODAL (outside page-wrap — full viewport) ── -->
+    <div class="modal-overlay" id="contact-modal">
+      <div class="modal">
+        <button class="modal-close" id="modal-close" type="button" aria-label="Close">
+          &times;
+        </button>
+        <h2 data-i18n="modal.title">Get in Touch</h2>
+        <p class="modal-sub" data-i18n="modal.sub">Have a project in mind? Let's talk.</p>
+        <form id="contact-form" novalidate>
+          <input
+            type="text"
+            name="_honey"
+            id="company"
+            class="honeypot"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+          />
+          <div class="form-group">
+            <label class="visually-hidden" for="name" data-i18n="modal.name">Your Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              autocomplete="name"
+              data-i18n-placeholder="modal.name"
+              placeholder="Your Name"
+              required
+            />
+            <span class="field-error" id="name-error" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <label class="visually-hidden" for="email" data-i18n="modal.email">Your Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              data-i18n-placeholder="modal.email"
+              placeholder="Your Email"
+              required
+            />
+            <span class="field-error" id="email-error" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <label class="visually-hidden" for="message" data-i18n="modal.msg">Your Message</label>
+            <textarea
+              id="message"
+              name="message"
+              data-i18n-placeholder="modal.msg"
+              placeholder="Your Message"
+              rows="5"
+              required
+            ></textarea>
+            <span class="field-error" id="message-error" aria-live="polite"></span>
+          </div>
+          <button type="submit" class="submit-btn" data-i18n="modal.send">Send Message</button>
+          <p class="form-privacy" data-i18n="modal.privacy">
+            Your name, email and message are only used to reply to your enquiry.
+          </p>
+          <p class="form-status" id="form-status"></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- ── PLAYLIST MODAL (full track table) ── -->
+    <div class="modal-overlay" id="playlist-modal">
+      <div class="modal modal--wide">
+        <button class="modal-close" id="playlist-close" type="button" aria-label="Close">
+          &times;
+        </button>
+        <h2 data-i18n="pl.title">All projects</h2>
+        <p class="modal-sub" data-i18n="pl.sub">Produced &amp; mixed by Markus Sundvall</p>
+        <div class="pl-table-wrap">
+          <table class="pl-table">
+            <thead>
+              <tr>
+                <th data-i18n="pl.preview">Preview</th>
+                <th data-i18n="pl.song">Song</th>
+                <th data-i18n="pl.artist">Artist</th>
+                <th data-i18n="pl.album">Album</th>
+                <th data-i18n="pl.length">Length</th>
+              </tr>
+            </thead>
+            <tbody id="pl-tbody"></tbody>
+          </table>
+        </div>
+        <a
+          class="pl-spotify"
+          href="https://open.spotify.com/playlist/5CEqGb12AgpdQ5vkQF6rUk"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.68 18.72 12.84c.361.18.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+          </svg>
+          <span data-i18n="pl.openSpotify">Open the full playlist on Spotify</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ── Floating scroll arrows (outside page-wrap so stacking works) ── -->
+    <button class="scroll-down" id="scroll-down" type="button">
+      <span class="visually-hidden" data-i18n="hero.scroll">Scroll down</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M6 9l6 6 6-6" />
+      </svg>
+    </button>
+    <button class="scroll-up" id="scroll-up" type="button">
+      <span class="visually-hidden" data-i18n="hero.scrollUp">Scroll up</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M6 15l6-6 6 6" />
+      </svg>
+    </button>
+
+    <audio id="card-audio" preload="none"></audio>
+
+    <!-- SweetAlert2 (pinned + Subresource Integrity) — loaded only when needed -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.25/dist/sweetalert2.all.min.js"
+      integrity="sha384-nLoOnA/BDh8A/jxqtckg4DumuCGOBYUnNJLZdQz/zfYNp3wcjGSoWTAzgko06G/2"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="script.js" defer></script>
+
+    <!-- ── Privacy-friendly analytics (optional) ──
+         Uncomment and add your domain to enable Plausible.
+         <script defer data-domain="your-domain.com"
+           src="https://plausible.io/js/script.js"></script> -->
+  </body>
+</html>
