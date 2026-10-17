@@ -72,7 +72,7 @@ document.addEventListener('keydown', e => {
 /* ── Scroll indicators (float and step through the sections) ── */
 const scrollDownBtn = document.getElementById('scroll-down');
 const scrollUpBtn = document.getElementById('scroll-up');
-const scrollOrder = ['hero-section', 'about', 'projects', 'cta'];
+const scrollOrder = ['hero-section', 'about', 'studio-section', 'projects', 'cta'];
 
 function scrollSections() {
   return scrollOrder.map(id => document.getElementById(id)).filter(Boolean);
@@ -627,7 +627,7 @@ const translations = {
     'tag-mastering': 'Mastering',
     'tag-songwriting': 'Låtskrivning',
     'tag-co-production': 'Co-produktion',
-    'tag-saxophone': 'Saxofon',
+    'tag-saxophone': 'Saxophone',
     'tag-recording': 'Inspelning',
     'tag-live': 'Live',
     'card.desc': 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',

@@ -36,6 +36,7 @@
   --text-muted: #666666;
   --logo-filter: none;
   --logo-glow-opacity: 1;
+  --logo-glow-filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 18px rgba(255, 255, 255, 0.65));
 
   /* ── Design system tokens ── */
   --radius-sm: 0.6rem;
@@ -71,8 +72,9 @@
   --heading: var(--lime-cream);
   --text-body: #c3d3dc;
   --text-muted: #9fb3bf;
-  /* --logo-filter: brightness(0) invert(1); */
-  --logo-glow-opacity: 0;
+    /* --logo-filter: brightness(0) invert(1); */
+    --logo-glow-opacity: 0;
+    --logo-glow-filter: none;
 
   color-scheme: dark;
 }
@@ -179,32 +181,35 @@ nav {
 }
 
 .logo-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-
-.logo-glow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 350px;
-  height: 100%;
-  pointer-events: none;
-  opacity: var(--logo-glow-opacity);
-  transition: opacity 0.3s ease;
-}
-
-.logo {
-  position: relative;
-  z-index: 1;
-  height: 60px;
-  width: auto;
-  display: block;
-  filter: var(--logo-filter);
-  transition: filter 0.3s ease, transform 0.3s var(--ease-out);
-}
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: auto;
+    isolation: isolate;
+  }
+  
+  .logo-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 100%;
+    pointer-events: none;
+    opacity: var(--logo-glow-opacity);
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    display: none;
+  }
+  
+  .logo {
+    position: relative;
+    z-index: 1;
+    height: 60px;
+    width: auto;
+    display: block;
+    filter: var(--logo-filter);
+    transition: filter 0.3s ease, transform 0.3s var(--ease-out);
+  }
 
 .logo-wrapper:hover .logo {
   transform: scale(1.03);
@@ -662,14 +667,46 @@ nav {
 }
 
 .skill-tags span {
+  display: inline-block;
   padding: 0.4rem 1.05rem;
   border-radius: var(--radius-pill);
-  background: linear-gradient(135deg, var(--lime-cream), var(--light-green));
-  color: var(--yale-blue);
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   box-shadow: var(--shadow-sm);
   transition: transform 0.25s var(--ease-out), box-shadow 0.25s ease;
+}
+
+/* Match carousel tag colours */
+.skill-tags span[data-i18n="tag-songwriting"] {
+  background: #87ceeb;
+  color: var(--yale-blue);
+}
+
+.skill-tags span[data-i18n="tag-production"] {
+  background: #e53935;
+  color: #fff;
+}
+
+.skill-tags span[data-i18n="tag-mixing"] {
+  background: #0741e0;
+  color: #fff;
+}
+
+.skill-tags span[data-i18n="tag-mastering"] {
+  background: var(--light-green);
+  color: var(--yale-blue);
+}
+
+.skill-tags span[data-i18n="tag-co-production"] {
+  background: #f57c00;
+  color: #fff;
+}
+
+.skill-tags span[data-i18n="tag-saxophone"] {
+  background: #ffd60a;
+  color: var(--yale-blue);
 }
 
 .skill-tags span:hover {
@@ -1016,7 +1053,7 @@ nav {
 }
 
 .card-tag[data-i18n="tag-mastering"] {
-  background: var(--lime-cream);
+  background: var(--light-green);
   color: var(--yale-blue);
 }
 
@@ -1612,8 +1649,41 @@ footer {
   50% { transform: translateY(-8px); }
 }
 
+/* ── Responsive: above tablet, logo still sits at the far left (nav-inner
+   max-width is 1100px) — anchor the white behind it here too. ── */
+@media (max-width: 1100px) {
+  html:not([data-theme="dark"]) nav {
+    --nav-bg: linear-gradient(
+      to right,
+      var(--lime-cream) 0px,
+      var(--lime-cream) 50px,
+      var(--pure-white) 114px,
+      var(--pure-white) 234px,
+      var(--lime-cream) 295px,
+      rgb(var(--yale-blue-rgb) / 0.85) 365px,
+      rgb(var(--yale-blue-rgb) / 0.85) 100%
+    );
+  }
+}
+
 /* ── Responsive: Tablet (≤ 768px) ── */
 @media (max-width: 768px) {
+  /* Re-centre the nav gradient's white behind the logo. The logo sits at a
+     fixed pixel offset from the left, so use pixel stops (not %) to keep the
+     white behind it across the whole tablet range. */
+  html:not([data-theme="dark"]) nav {
+    --nav-bg: linear-gradient(
+      to right,
+      var(--lime-cream) 0px,
+      var(--lime-cream) 30px,
+      var(--pure-white) 75px,
+      var(--pure-white) 195px,
+      var(--lime-cream) 250px,
+      rgb(var(--yale-blue-rgb) / 0.85) 320px,
+      rgb(var(--yale-blue-rgb) / 0.85) 100%
+    );
+  }
+
   .hamburger {
     display: flex;
   }
@@ -1679,13 +1749,18 @@ footer {
   }
 
   .logo-glow {
-    width: 260px;
+    display: block;
+    top: 54.5%;
+    left: 42%;
+    width: 150%;
+    height: 170%;
+    transform: translate(-50%, -50%);
     background: radial-gradient(
-      260px 64px at 25px 50%,
-      rgba(255, 255, 255, 0.95) 0%,
-      rgba(255, 255, 255, 0.5) 25%,
-      rgba(255, 255, 255, 0.15) 50%,
-      rgba(255, 255, 255, 0) 72%
+      50% 50% at 50% 50%,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.45) 35%,
+      rgba(255, 255, 255, 0.12) 60%,
+      rgba(255, 255, 255, 0) 78%
     );
   }
 
@@ -1797,23 +1872,26 @@ footer {
 
 /* ── Responsive: Phone (≤ 480px) ── */
 @media (max-width: 480px) {
+  /* Logo is smaller here (ink centre ~x=109) → shift the white plateau left */
+  html:not([data-theme="dark"]) nav {
+    --nav-bg: linear-gradient(
+      to right,
+      var(--lime-cream) 0px,
+      var(--lime-cream) 22px,
+      var(--pure-white) 55px,
+      var(--pure-white) 165px,
+      var(--lime-cream) 215px,
+      rgb(var(--yale-blue-rgb) / 0.85) 280px,
+      rgb(var(--yale-blue-rgb) / 0.85) 100%
+    );
+  }
+
   .nav-links {
     width: 100%;
   }
 
   .logo {
     height: 35px;
-  }
-
-  .logo-glow {
-    width: 200px;
-    background: radial-gradient(
-      200px 64px at 18px 50%,
-      rgba(255, 255, 255, 0.95) 0%,
-      rgba(255, 255, 255, 0.5) 25%,
-      rgba(255, 255, 255, 0.15) 50%,
-      rgba(255, 255, 255, 0) 72%
-    );
   }
 
   .hero-text h1 {
@@ -1851,10 +1929,6 @@ footer {
 
   .carousel-3d-stage {
     height: 560px;
-  }
-
-  .carousel-btn {
-    display: none;
   }
 
   #about,
