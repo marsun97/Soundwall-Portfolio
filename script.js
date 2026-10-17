@@ -723,11 +723,11 @@ function applyTheme(theme, persist) {
   if (themeColorMeta) themeColorMeta.setAttribute('content', theme === 'dark' ? '#071622' : '#184e77');
   if(theme==='light') {
 
-    logoImage.src="/logos/Logo-3.png";
+    logoImage.src="logos/Logo-3.png";
     
   }
   else {
-    logoImage.src="/logos/Logo-3-Darkmode.png";
+    logoImage.src="logos/Logo-3-Darkmode.png";
   }
 }
 
